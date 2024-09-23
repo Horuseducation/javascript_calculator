@@ -3,13 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>calculator</title>
 </head>
 <body>
     <div class="container">
         <div class="calculator">
-            good morning
+           <input type="text" placeholder="0" id="result">
+           <button onclick="clear()" value="C" >C</button>
+           <button onclick="disp()" value="0" >0</button>
+           <button onclick="disp()" value="1" >1</button>
+           <button onclick="disp()" value="2" >2</button>
+           <button onclick="disp()" value="3" >3</button>
+           <button onclick="disp()" value="4" >4</button>
+           <button onclick="disp()" value="5" >5</button>
+           <button onclick="disp()" value="6" >6</button>
+           <button onclick="disp()" value="7" >7</button>
+           <button onclick="disp()" value="8" >8</button>
+           <button onclick="disp()" value="9" >9</button>
+           <button onclick="disp()" value="+" >+</button>
+           <button onclick="disp()" value="*" >*</button>
+           <button onclick="disp()" value="/" >/</button>
+           <button onclick="disp()" value="-" >-</button>
+           <button onclick="calc()" value="=" >=</button>
+           <button onclick="Delete()" value="Del" >Del</button>
         </div>
     </div>
+    <script>
+        let res = document.getElementById("result ")
+    </script>
 </body>
 </html>

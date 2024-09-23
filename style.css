@@ -1,0 +1,19 @@
+.calculator{
+    background-color: aqua;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    width: 100%;
+    height:100%;
+    background-color: rgb(255, 255, 255);
+    font-size: 21px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 2px solid black;
+
+}
+#result{
+border: 2px solid black;
+font-size: 26px;
+}
