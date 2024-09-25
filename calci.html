@@ -10,27 +10,61 @@
     <div class="container">
         <div class="calculator">
            <input type="text" placeholder="0" id="result">
-           <button onclick="clear()" value="C" >C</button>
-           <button onclick="disp()" value="0" >0</button>
-           <button onclick="disp()" value="1" >1</button>
-           <button onclick="disp()" value="2" >2</button>
-           <button onclick="disp()" value="3" >3</button>
-           <button onclick="disp()" value="4" >4</button>
-           <button onclick="disp()" value="5" >5</button>
-           <button onclick="disp()" value="6" >6</button>
-           <button onclick="disp()" value="7" >7</button>
-           <button onclick="disp()" value="8" >8</button>
-           <button onclick="disp()" value="9" >9</button>
-           <button onclick="disp()" value="+" >+</button>
-           <button onclick="disp()" value="*" >*</button>
-           <button onclick="disp()" value="/" >/</button>
-           <button onclick="disp()" value="-" >-</button>
-           <button onclick="calc()" value="=" >=</button>
+           <button onclick="Clear()" value="C" >CL</button>
+           <button onclick="disp('0')" value="0" >0</button>
+           <button onclick="disp('1')" value="1" >1</button>
+           <button onclick="disp('2')" value="2" >2</button>
+           <button onclick="disp('3')" value="3" >3</button>
+           <button onclick="disp('4')" value="4" >4</button>
+           <button onclick="disp('5')" value="5" >5</button>
+           <button onclick="disp('6')" value="6" >6</button>
+           <button onclick="disp('7')" value="7" >7</button>
+           <button onclick="disp('8')" value="8" >8</button>
+           <button onclick="disp('9')" value="9" >9</button>
+           <button onclick="disp('+')" value="+" >+</button>
+           <button onclick="disp('*')" value="*" >*</button>
+           <button onclick="disp('/')" value="/" >/</button>
+           <button onclick="disp('-')" value="-" >-</button>
+           <button onclick="Calc()" value="=" >=</button>
            <button onclick="Delete()" value="Del" >Del</button>
         </div>
     </div>
     <script>
-        let res = document.getElementById("result ")
+        function disp(val){
+        let res = document.getElementById('result');
+        res.value += val;
+    }
+    function Delete(){
+        let res = document.getElementById('result');
+        res.value = " ";
+
+    }
+    function Clear(){
+        let res = document.getElementById('result');
+        res.value = res.value.slice(0,-1);
+        
+    }
+    function Calc(){
+        let res = document.getElementById('result');
+        let cal = res.value;
+        res.value = eval(cal);
+    }
+    document.addEventListener('keydown',function(event){
+        let key = event.key;
+        const validKeys = '0123456789+-*/';
+        if(validKeys.includes(key)){
+            disp(key === '*' ? '*' : key);
+        } else if (key === 'Enter') {
+      Calc();
+   } else if (key === 'Backspace') {
+      Clear();
+    }
+    else if (key === 'Delete') {
+      Delete();
+    }
+}
+)
+
     </script>
 </body>
 </html>
